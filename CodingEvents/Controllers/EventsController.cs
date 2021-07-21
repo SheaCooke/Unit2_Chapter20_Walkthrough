@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CodingEvents.Models;
+using CodingEvents.Data;
 
 namespace CodingEvents.Controllers
 {
@@ -12,14 +13,14 @@ namespace CodingEvents.Controllers
     {
         //private static List<string> Events = new List<string>();
 
-        private static List<Event> Events = new List<Event>();
+        /*private static List<Event> Events = new List<Event>();*/
 
         [HttpGet]
         public IActionResult Index()
         {
-            
 
-            ViewBag.events = Events;
+
+            ViewBag.events = EventData.GetAll();
 
             return View();
         }
@@ -33,10 +34,26 @@ namespace CodingEvents.Controllers
 
         [HttpPost]
         [Route("/events/add")]
-        public IActionResult NewEvent(string name, string description)
+        public IActionResult NewEvent(Event newEvent)
         {
-            Events.Add(new Event(name, description));
+            EventData.Add(newEvent);
             return Redirect("/events");
+        }
+
+        public IActionResult Delete()
+        {
+            ViewBag.events = EventData.GetAll();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int[] eventIds)
+        {
+            foreach(int i in eventIds)
+            {
+                EventData.Remove(i);
+            }
+            return Redirect("/Events");
         }
     }
 }

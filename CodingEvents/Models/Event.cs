@@ -16,10 +16,15 @@ namespace CodingEvents.Models
 
         private static int nextId = 1;
 
-        public Event(string name, string description)
+        public Event(string name, string description) :this()
         {
             Name = name;
             Description = description;
+            
+        }
+
+        public Event()
+        {
             Id = nextId;
             nextId++;
         }
