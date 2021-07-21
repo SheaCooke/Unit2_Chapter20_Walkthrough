@@ -1,5 +1,5 @@
 ﻿@{ 
-    int rowNum = 1;
+    @*int rowNum = 1;*@
 }
 
 
@@ -26,16 +26,18 @@
     <tbody>
         @foreach (var meeting in ViewBag.events)
         {
-            <tr>
-               
+        <tr>
 
-                <th scope="row">@rowNum</th>
-                <td>@meeting.Key</td>
-                <td>@meeting.Value</td>
-                
 
-            </tr>
-            rowNum++;
+            @*<th scope="row">@rowNum</th>*@
+            <td>@meeting.Id</td>
+            <td>@meeting.Name</td>
+            <td>@meeting.Description</td>
+
+
+
+        </tr>
+            @*rowNum++;*@
         }
         
     </tbody>
