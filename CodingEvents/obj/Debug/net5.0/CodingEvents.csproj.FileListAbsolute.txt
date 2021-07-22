@@ -41,3 +41,4 @@ C:\Users\Shea Cooke\Desktop\LaunchCode\C#_Web_Development\chapter_13_demo_2\Codi
 C:\Users\Shea Cooke\Desktop\LaunchCode\C#_Web_Development\chapter_13_demo_2\CodingEvents\CodingEvents\obj\Debug\net5.0\CodingEvents.csproj.CopyComplete
 C:\Users\Shea Cooke\Desktop\LaunchCode\C#_Web_Development\chapter_13_demo_2\CodingEvents\CodingEvents\obj\Debug\net5.0\Razor\Views\Events\Add.cshtml.g.cs
 C:\Users\Shea Cooke\Desktop\LaunchCode\C#_Web_Development\chapter_13_demo_2\CodingEvents\CodingEvents\obj\Debug\net5.0\Razor\Views\Events\Delete.cshtml.g.cs
+C:\Users\Shea Cooke\Desktop\LaunchCode\C#_Web_Development\chapter_13_demo_2\CodingEvents\CodingEvents\obj\Debug\net5.0\Razor\Views\Events\Edit.cshtml.g.cs

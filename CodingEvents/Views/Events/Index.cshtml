@@ -8,6 +8,7 @@
 <p> <a asp-controller="Events" asp-action="Add">Add Events</a></p>
 <p><a  asp-controller="Events" asp-action="Delete">Delete</a></p>
 
+
 @if (ViewBag.events.Count == 0)
 {
    <p>No Events</p>
@@ -34,6 +35,8 @@
             <td>@meeting.Id</td>
             <td>@meeting.Name</td>
             <td>@meeting.Description</td>
+            <td>
+            <td><a href="/Events/Edit/@meeting.Id">Edit Event</a> @*<a asp-controller="Events" asp-action="Edit" asp-route-id="@meeting.Id">Edit Event</a>*@</td>
 
 
 

@@ -18,14 +18,14 @@ namespace CodingEvents.Models
 
         public Event(string name, string description) :this()
         {
-            Name = name;
-            Description = description;
+            this.Name = name;
+            this.Description = description;
             
         }
 
         public Event()
         {
-            Id = nextId;
+            this.Id = nextId;
             nextId++;
         }
 

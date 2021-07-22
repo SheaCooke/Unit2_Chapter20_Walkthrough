@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using CodingEvents.Models;
 using CodingEvents.Data;
-
 namespace CodingEvents.Controllers
 {
     
@@ -53,6 +52,24 @@ namespace CodingEvents.Controllers
             {
                 EventData.Remove(i);
             }
+            return Redirect("/Events");
+        }
+
+        [Route("/Events/Edit/{eventId?}")]
+        public IActionResult Edit(int eventId, string name)
+        {
+            ViewBag.eventToBeEdited = EventData.GetById(eventId);
+            ViewBag.EditEvent = $"Edit Event {name} (id={eventId})";
+            return View();
+        }
+
+        [HttpPost]
+        [Route("/Events/Edit/{eventId?}")]
+        public IActionResult SubmitEditEventForm(int eventId, string name, string description)
+        {
+            EventData.Events[eventId].Name = name;
+            EventData.Events[eventId].Description = description;
+            
             return Redirect("/Events");
         }
     }
