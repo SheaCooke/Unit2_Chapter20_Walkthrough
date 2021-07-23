@@ -67,9 +67,12 @@ namespace CodingEvents.Controllers
         [Route("/Events/Edit/{eventId?}")]
         public IActionResult SubmitEditEventForm(int eventId, string name, string description)
         {
-            EventData.Events[eventId].Name = name;
-            EventData.Events[eventId].Description = description;
-            
+            /*EventData.Events[eventId].Name = name;
+            EventData.Events[eventId].Description = description;*/
+
+            EventData.Events.Where(x => x.Id == eventId).ToList().ForEach(x => x.Name = name);
+            EventData.Events.Where(x => x.Id == eventId).ToList().ForEach(x => x.Description = description);
+
             return Redirect("/Events");
         }
     }
