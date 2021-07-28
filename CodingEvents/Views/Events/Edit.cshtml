@@ -13,6 +13,15 @@
     <label for="description">Enter a description of the event.</label>
     <input name="description" type="text" value="@ViewBag.eventToBeEdited.Description" />
 
+    <label for="contactEmail">Enter a contact email. </label>
+    <input name="contactEmail" type="email" value="@ViewBag.eventToBeEdited.ContactEmail" />
+
+    <label for="location">Enter a location for the event.</label>
+    <input name="location" type="text" value="@ViewBag.eventToBeEdited.Location" />
+
+    <label for="attendees">Enter the number of attendees for the event.</label>
+    <input name="attendees" type="text" value="@ViewBag.eventToBeEdited.Attendees" />
+
 
 
     <input type="submit" value="Save Event" />
