@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CodingEvents.Models;
 using CodingEvents.Data;
+using CodingEvents.ViewModles;
 namespace CodingEvents.Controllers
 {
     
@@ -19,24 +20,43 @@ namespace CodingEvents.Controllers
         {
 
 
-            ViewBag.events = EventData.GetAll();
+            //ViewBag.events = EventData.GetAll();
+            List<Event> events = new List<Event>(EventData.GetAll());
 
-            return View();
+            return View(events);
         }
 
         [HttpGet] 
         // /events/add
         public IActionResult Add()
         {
-            return View();
+            AddEventViewModel addEventViewModel = new AddEventViewModel();
+            return View(addEventViewModel);
         }
 
         [HttpPost]
-        [Route("/events/add")]
-        public IActionResult NewEvent(Event newEvent)
+        //[Route("/events/add")]
+        public IActionResult Add(AddEventViewModel addEventViewModel)
         {
-            EventData.Add(newEvent);
-            return Redirect("/events");
+            if (ModelState.IsValid)
+            {
+                Event newEvent = new Event
+                {
+                    Name = addEventViewModel.Name,
+                    Description = addEventViewModel.Description,
+                    ContactEmail = addEventViewModel.ContactEmail,
+                    Location = addEventViewModel.Location,
+                    Attendees = addEventViewModel.Attendees,
+                    RegistrationRequired = addEventViewModel.RegistrationRequired
+                   
+                     };
+             
+                EventData.Add(newEvent);
+                return Redirect("/events");
+            }
+
+            return View(addEventViewModel);
+            
         }
 
         public IActionResult Delete()
