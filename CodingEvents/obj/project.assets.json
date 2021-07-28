@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Shea Cooke\\Desktop\\LaunchCode\\C#_Web_Development\\Unit2_Chapter15_Walkthrough\\Unit2_Chapter14_Exercise\\CodingEvents\\CodingEvents.csproj",
+      "projectUniqueName": "C:\\Users\\Shea Cooke\\Desktop\\LaunchCode\\C#_Web_Development\\Unit2_Chapter15_Exercise\\Unit2_Chapter14_Exercise\\CodingEvents\\CodingEvents.csproj",
       "projectName": "CodingEvents",
-      "projectPath": "C:\\Users\\Shea Cooke\\Desktop\\LaunchCode\\C#_Web_Development\\Unit2_Chapter15_Walkthrough\\Unit2_Chapter14_Exercise\\CodingEvents\\CodingEvents.csproj",
+      "projectPath": "C:\\Users\\Shea Cooke\\Desktop\\LaunchCode\\C#_Web_Development\\Unit2_Chapter15_Exercise\\Unit2_Chapter14_Exercise\\CodingEvents\\CodingEvents.csproj",
       "packagesPath": "C:\\Users\\Shea Cooke\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Shea Cooke\\Desktop\\LaunchCode\\C#_Web_Development\\Unit2_Chapter15_Walkthrough\\Unit2_Chapter14_Exercise\\CodingEvents\\obj\\",
+      "outputPath": "C:\\Users\\Shea Cooke\\Desktop\\LaunchCode\\C#_Web_Development\\Unit2_Chapter15_Exercise\\Unit2_Chapter14_Exercise\\CodingEvents\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Shea Cooke\\AppData\\Roaming\\NuGet\\NuGet.Config",

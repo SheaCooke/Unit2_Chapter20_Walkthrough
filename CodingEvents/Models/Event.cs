@@ -22,6 +22,8 @@ namespace CodingEvents.Models
 
         public bool RegistrationRequired { get; set; }
 
+        public EventType Type { get; set; }
+
 
         public int Id { get; }
 
