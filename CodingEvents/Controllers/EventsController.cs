@@ -15,13 +15,23 @@ namespace CodingEvents.Controllers
 
         /*private static List<Event> Events = new List<Event>();*/
 
+
+        private EventDbContext context;
+        public EventsController(EventDbContext dbContext)
+        {
+            context = dbContext;
+        }
+
+        
+
         [HttpGet]
         public IActionResult Index()
         {
 
 
             //ViewBag.events = EventData.GetAll();
-            List<Event> events = new List<Event>(EventData.GetAll());
+            /*List<Event> events = new List<Event>(EventData.GetAll());*/
+            List<Event> events = context.Events.ToList();
 
             return View(events);
         }
@@ -51,8 +61,10 @@ namespace CodingEvents.Controllers
                     Type = addEventViewModel.Type
                    
                      };
-             
-                EventData.Add(newEvent);
+
+                //EventData.Add(newEvent);
+                context.Events.Add(newEvent);
+                context.SaveChanges();
                 return Redirect("/events");
             }
 
@@ -62,7 +74,8 @@ namespace CodingEvents.Controllers
 
         public IActionResult Delete()
         {
-            ViewBag.events = EventData.GetAll();
+            //ViewBag.events = EventData.GetAll();
+            ViewBag.events = context.Events.ToList();
             return View();
         }
 
@@ -71,15 +84,19 @@ namespace CodingEvents.Controllers
         {
             foreach(int i in eventIds)
             {
-                EventData.Remove(i);
+                //EventData.Remove(i);
+                Event theEvent = context.Events.Find(i);
+                context.Events.Remove(theEvent);
             }
+            context.SaveChanges();
             return Redirect("/Events");
         }
 
         [Route("/Events/Edit/{eventId?}")]
         public IActionResult Edit(int eventId, string name)
         {
-            ViewBag.eventToBeEdited = EventData.GetById(eventId);
+            //ViewBag.eventToBeEdited = EventData.GetById(eventId);
+            ViewBag.eventToBeEdited = context.Events.Find(eventId);
             ViewBag.EditEvent = $"Edit Event {name} (id={eventId})";
             return View();
         }
@@ -91,11 +108,12 @@ namespace CodingEvents.Controllers
             /*EventData.Events[eventId].Name = name;
             EventData.Events[eventId].Description = description;*/
 
-            EventData.Events.Where(x => x.Id == eventId).ToList().ForEach(x => x.Name = name);
-            EventData.Events.Where(x => x.Id == eventId).ToList().ForEach(x => x.Description = description);
-            EventData.Events.Where(x => x.Id == eventId).ToList().ForEach(x => x.ContactEmail = contactEmail);
-            EventData.Events.Where(x => x.Id == eventId).ToList().ForEach(x => x.Location = location);
-            EventData.Events.Where(x => x.Id == eventId).ToList().ForEach(x => x.Attendees = attendees);
+            context.Events.Where(x => x.Id == eventId).ToList().ForEach(x => x.Name = name);
+            context.Events.Where(x => x.Id == eventId).ToList().ForEach(x => x.Description = description);
+            context.Events.Where(x => x.Id == eventId).ToList().ForEach(x => x.ContactEmail = contactEmail);
+            context.Events.Where(x => x.Id == eventId).ToList().ForEach(x => x.Location = location);
+            context.Events.Where(x => x.Id == eventId).ToList().ForEach(x => x.Attendees = attendees);
+            context.SaveChanges();
 
             return Redirect("/Events");
         }

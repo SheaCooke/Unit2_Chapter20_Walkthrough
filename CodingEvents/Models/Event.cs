@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CodingEvents.Models
 {
@@ -25,11 +26,11 @@ namespace CodingEvents.Models
         public EventType Type { get; set; }
 
 
-        public int Id { get; }
+        public int Id { get; set;  }
 
-        private static int nextId = 1;
+        /*private static int nextId = 1;*/
 
-        public Event(string name, string description, string contactEmail) :this()
+        public Event(string name, string description, string contactEmail) /*:this()*/
         {
             this.Name = name;
             this.Description = description;
@@ -39,8 +40,8 @@ namespace CodingEvents.Models
 
         public Event()
         {
-            this.Id = nextId;
-            nextId++;
+            /*this.Id = nextId;
+            nextId++;*/
         }
 
 
