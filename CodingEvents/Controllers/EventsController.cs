@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using CodingEvents.Models;
 using CodingEvents.Data;
 using CodingEvents.ViewModles;
+using Microsoft.EntityFrameworkCore;
+
 namespace CodingEvents.Controllers
 {
     
@@ -31,7 +33,9 @@ namespace CodingEvents.Controllers
 
             //ViewBag.events = EventData.GetAll();
             /*List<Event> events = new List<Event>(EventData.GetAll());*/
-            List<Event> events = context.Events.ToList();
+            List<Event> events = context.Events
+                .Include(e => e.Category) // include foreign key
+                .ToList();
 
             return View(events);
         }
@@ -40,7 +44,8 @@ namespace CodingEvents.Controllers
         // /events/add
         public IActionResult Add()
         {
-            AddEventViewModel addEventViewModel = new AddEventViewModel();
+            List<EventCategory> categories = context.Categories.ToList();
+            AddEventViewModel addEventViewModel = new AddEventViewModel(categories);
             return View(addEventViewModel);
         }
 
@@ -50,6 +55,7 @@ namespace CodingEvents.Controllers
         {
             if (ModelState.IsValid)
             {
+                EventCategory theCategory = context.Categories.Find(addEventViewModel.CategoryId);
                 Event newEvent = new Event
                 {
                     Name = addEventViewModel.Name,
@@ -58,7 +64,9 @@ namespace CodingEvents.Controllers
                     Location = addEventViewModel.Location,
                     Attendees = addEventViewModel.Attendees,
                     RegistrationRequired = addEventViewModel.RegistrationRequired,
-                    Type = addEventViewModel.Type
+                    //Type = addEventViewModel.Type
+                    Category = theCategory
+
                    
                      };
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Pb68HmQFB7s+E0r4s4NebzF9soVdHdHxyXuSpCbWTRfeMNVc/LHxaq25gVI3t1R54NQPlZspMIxQLRnYhiC6NA==",
+  "dgSpecHash": "sU8WRiJe8QS9bsDqrR37j2wh/2cNUclcQ0fsbmCY9TMM5pLXLB8DZuvXhbV1LIb4S1f7JgALFSd397gYX5qD8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Shea Cooke\\Desktop\\LaunchCode\\C#_Web_Development\\Unit2_Chapter19_Exercise\\Unit2_Chapter14_Exercise\\CodingEvents\\CodingEvents.csproj",
+  "projectFilePath": "C:\\Users\\Shea Cooke\\Desktop\\LaunchCode\\C#_Web_Development\\Unit2_Chapter20_Walkthrough\\Unit2_Chapter20_Walkthrough\\CodingEvents\\CodingEvents.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Shea Cooke\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Shea Cooke\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",

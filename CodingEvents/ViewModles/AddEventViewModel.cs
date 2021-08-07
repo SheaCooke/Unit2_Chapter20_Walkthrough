@@ -36,16 +36,40 @@ namespace CodingEvents.ViewModles
         [Required(ErrorMessage = "Enter true or false")]
         public bool RegistrationRequired { get; set; }
 
-        public EventType Type { get; set; }
+        //public EventType Type { get; set; }
 
-        public List<SelectListItem> EventTypes { get; set; } = new List<SelectListItem>
+        [Required(ErrorMessage ="Category required.")]
+        public int CategoryId { get; set; }
+
+        public List<SelectListItem> Categories { get; set; }
+
+        /*public List<SelectListItem> EventTypes { get; set; } = new List<SelectListItem>
         {
             new SelectListItem(EventType.Conference.ToString(), ((int)EventType.Conference).ToString()),
             new SelectListItem(EventType.Meetup.ToString(), ((int)EventType.Meetup).ToString()),
             new SelectListItem(EventType.Workshop.ToString(), ((int)EventType.Workshop).ToString()),
             new SelectListItem(EventType.Social.ToString(), ((int)EventType.Social).ToString()),
 
-        };
+        };*/
+
+        public AddEventViewModel(List<EventCategory> categories)
+        {
+            Categories = new List<SelectListItem>();
+
+            foreach(var category in categories)
+            {
+                Categories.Add(
+                    new SelectListItem
+                    {
+                        Value = category.Id.ToString(),
+                        Text = category.Name
+                    }
+
+                    );
+            }
+        }
+
+        public AddEventViewModel() { }
 
 
     }

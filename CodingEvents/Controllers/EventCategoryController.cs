@@ -24,7 +24,7 @@ namespace CodingEvents.Controllers
 
         public IActionResult Index()
         {
-            List<EventCategory> eventCategories = _context.EventCategory.ToList();
+            List<EventCategory> eventCategories = _context.Categories.ToList();
             return View(eventCategories);
         }
 
@@ -45,7 +45,7 @@ namespace CodingEvents.Controllers
                 {
                     Name = addEventCategoryViewModel.Name
                 };
-                _context.EventCategory.Add(newEventCategory);
+                _context.Categories.Add(newEventCategory);
                 _context.SaveChanges();
                 return Redirect("Index");
             }

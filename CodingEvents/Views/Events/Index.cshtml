@@ -27,7 +27,7 @@
             <th scope="col">Location</th>
             <th scope="col">Number of Attendees</th>
             <th scope="col">Registration Required?</th>
-            <th scope="col">Event Type</th>
+            <th scope="col">Category</th>
 
         </tr>
     </thead>
@@ -45,7 +45,7 @@
             <td>@meeting.Location</td>
             <td>@meeting.Attendees</td>
             <td>@meeting.RegistrationRequired</td>
-            <td>@meeting.Type</td>
+            <td>@meeting.Category.Name</td>
 
             <td><a href="/Events/Edit/@meeting.Id">Edit Event</a> @*<a asp-controller="Events" asp-action="Edit" asp-route-id="@meeting.Id">Edit Event</a>*@</td>
 
