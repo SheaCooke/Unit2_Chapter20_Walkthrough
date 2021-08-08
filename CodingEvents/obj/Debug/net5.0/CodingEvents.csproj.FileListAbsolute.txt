@@ -326,3 +326,8 @@ C:\Users\Shea Cooke\Desktop\LaunchCode\C#_Web_Development\Unit2_Chapter20_Walkth
 C:\Users\Shea Cooke\Desktop\LaunchCode\C#_Web_Development\Unit2_Chapter20_Walkthrough\Unit2_Chapter20_Walkthrough\CodingEvents\obj\Debug\net5.0\CodingEvents.Views.pdb
 C:\Users\Shea Cooke\Desktop\LaunchCode\C#_Web_Development\Unit2_Chapter20_Walkthrough\Unit2_Chapter20_Walkthrough\CodingEvents\obj\Debug\net5.0\CodingEvents.csproj.CopyComplete
 C:\Users\Shea Cooke\Desktop\LaunchCode\C#_Web_Development\Unit2_Chapter20_Walkthrough\Unit2_Chapter20_Walkthrough\CodingEvents\obj\Debug\net5.0\CodingEvents.genruntimeconfig.cache
+C:\Users\Shea Cooke\Desktop\LaunchCode\C#_Web_Development\Unit2_Chapter20_Walkthrough\Unit2_Chapter20_Walkthrough\CodingEvents\obj\Debug\net5.0\Razor\Views\Tag\Add.cshtml.g.cs
+C:\Users\Shea Cooke\Desktop\LaunchCode\C#_Web_Development\Unit2_Chapter20_Walkthrough\Unit2_Chapter20_Walkthrough\CodingEvents\obj\Debug\net5.0\Razor\Views\Tag\Index.cshtml.g.cs
+C:\Users\Shea Cooke\Desktop\LaunchCode\C#_Web_Development\Unit2_Chapter20_Walkthrough\Unit2_Chapter20_Walkthrough\CodingEvents\obj\Debug\net5.0\Razor\Views\Events\Detail.cshtml.g.cs
+C:\Users\Shea Cooke\Desktop\LaunchCode\C#_Web_Development\Unit2_Chapter20_Walkthrough\Unit2_Chapter20_Walkthrough\CodingEvents\obj\Debug\net5.0\Razor\Views\Tag\AddEvent.cshtml.g.cs
+C:\Users\Shea Cooke\Desktop\LaunchCode\C#_Web_Development\Unit2_Chapter20_Walkthrough\Unit2_Chapter20_Walkthrough\CodingEvents\obj\Debug\net5.0\Razor\Views\Tag\Detail.cshtml.g.cs
